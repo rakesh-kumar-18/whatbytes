@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface ModalProps {
+    currentRank: number;
+    currentPercentile: number;
+    currentCorrectScore: number;
     onClose: () => void;
+    onSubmit: (rank: number, percentile: number, score: number) => void;
 }
 
-const Modal: React.FC<ModalProps> = ({ onClose }) => {
+const Modal: React.FC<ModalProps> = ({
+    currentRank,
+    currentPercentile,
+    currentCorrectScore,
+    onClose,
+    onSubmit,
+}) => {
+    const [rank, setRank] = useState(currentRank);
+    const [percentile, setPercentile] = useState(currentPercentile);
+    const [score, setScore] = useState(currentCorrectScore);
+
+    const handleSave = () => {
+        onSubmit(rank, percentile, score);
+    };
+
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
             <div className="bg-white rounded-lg max-w-lg w-full p-6">
@@ -22,7 +40,8 @@ const Modal: React.FC<ModalProps> = ({ onClose }) => {
                         <input
                             type="number"
                             className="w-full border rounded-md p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                            defaultValue="1"
+                            value={rank}
+                            onChange={(e) => setRank(Number(e.target.value))}
                         />
                     </div>
                     <div className="space-y-2">
@@ -32,7 +51,8 @@ const Modal: React.FC<ModalProps> = ({ onClose }) => {
                         <input
                             type="number"
                             className="w-full border rounded-md p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                            defaultValue="30"
+                            value={percentile}
+                            onChange={(e) => setPercentile(Number(e.target.value))}
                         />
                     </div>
                     <div className="space-y-2">
@@ -42,7 +62,8 @@ const Modal: React.FC<ModalProps> = ({ onClose }) => {
                         <input
                             type="number"
                             className="w-full border rounded-md p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                            defaultValue="10"
+                            value={score}
+                            onChange={(e) => setScore(Number(e.target.value))}
                         />
                     </div>
                 </div>
@@ -53,7 +74,10 @@ const Modal: React.FC<ModalProps> = ({ onClose }) => {
                     >
                         Cancel
                     </button>
-                    <button className="bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-800 transition-colors">
+                    <button
+                        onClick={handleSave}
+                        className="bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-800 transition-colors"
+                    >
                         Save
                     </button>
                 </div>
