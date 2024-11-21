@@ -1,12 +1,12 @@
-import { GlobeAltIcon } from '@heroicons/react/24/outline';
+import { MapIcon } from '@heroicons/react/24/solid';
 
 export default function WhatbytesLogo() {
     return (
         <div
-            className={`flex flex-row items-center leading-none text-white`}
+            className={`flex flex-row items-center leading-none`}
         >
-            <GlobeAltIcon className="h-12 w-12 rotate-[15deg]" />
-            <p className="text-[44px]">WhatBytes</p>
+            <MapIcon className="h-8 w-8" />
+            <p className="text-[30px] font-bold">WhatBytes</p>
         </div>
     );
 }
