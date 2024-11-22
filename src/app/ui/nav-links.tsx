@@ -31,15 +31,15 @@ export default function NavLinks({ handleTabClick }: NavLinksProps) {
                         key={link.name}
                         href={link.href}
                         className={clsx(
-                            "flex h-[48px] grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3",
+                            "flex h-[48px] grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium hover:bg-sky-100 hover:text-[#151b60] md:flex-none md:justify-start md:p-2 md:px-3",
                             {
-                                'bg-sky-100 text-blue-600': link.href === pathname,
+                                'bg-sky-100 text-[#1a237e]': link.href === pathname,
                             }
                         )}
                         onClick={handleTabClick}
                     >
-                        <LinkIcon className="w-6" />
-                        <p className="md:block">{link.name}</p>
+                        <LinkIcon className="w-6 mr-2" />
+                        <p className="md:block font-bold text-lg">{link.name}</p>
                     </Link>
                 );
             })}

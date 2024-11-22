@@ -18,18 +18,18 @@ export default function Navbar({ setIsSidebarOpen }: NavbarProps) {
                     <div className="flex items-center">
                         <button
                             onClick={() => setIsSidebarOpen(true)}
-                            className="sm:hidden p-2 rounded-md"
+                            className="sm:hidden p-2"
                             type="button"
                             aria-label="Open menu"
                         >
-                            <Bars3Icon />
+                            <Bars3Icon className='h-6 w-6' />
                         </button>
                         <Link href="/" className="flex-shrink-0 flex items-center">
                             <WhatbytesLogo />
                         </Link>
                     </div>
                     <div className="flex items-center space-x-3 md:space-x-4">
-                        <UserIcon />
+                        <UserIcon className='h-6 w-6' />
                     </div>
                 </div>
             </div>
