@@ -16,51 +16,51 @@ const QuickStatistics: React.FC<QuickStatisticsProps> = ({
     score,
 }) => {
     return (
-        <div className="bg-white shadow-md rounded-lg p-4 w-full max-w-4xl mx-auto">
-            <h2 className="text-lg font-bold mb-4">Quick Statistics</h2>
-            <div className="flex flex-wrap items-center justify-between gap-4 md:gap-8">
+        <div className="bg-white rounded-lg p-6 shadow w-full hover:shadow-md transition-shadow duration-200">
+            <h2 className="text-base font-bold mb-4 text-gray-900">Quick Statistics</h2>
+            <div className="grid grid-cols-3 divide-x divide-gray-200">
                 {/* Rank */}
-                <div className="flex items-center space-x-4">
-                    <div className="bg-yellow-100 rounded-full p-3 flex items-center justify-center">
+                <div className="flex items-center gap-3 px-4 first:pl-0">
+                    <div className="bg-yellow-100 rounded-full p-2 flex items-center justify-center">
                         <Image
                             src={trophy}
                             alt="Rank Icon"
-                            className="w-8 h-8 object-contain"
+                            className="w-7 h-7 object-contain"
                         />
                     </div>
-                    <div className="text-center">
-                        <p className="text-2xl font-semibold">{rank}</p>
-                        <p className="text-gray-500 text-sm uppercase">Your Rank</p>
+                    <div>
+                        <p className="text-xl font-semibold text-gray-900 mb-0.5">{rank}</p>
+                        <p className="text-xs text-gray-500 uppercase tracking-wide">YOUR RANK</p>
                     </div>
                 </div>
 
                 {/* Percentile */}
-                <div className="flex items-center space-x-4">
-                    <div className="bg-blue-100 rounded-full p-3 flex items-center justify-center">
+                <div className="flex items-center gap-3 px-4">
+                    <div className="bg-blue-100 rounded-full p-2 flex items-center justify-center">
                         <Image
                             src={clipboard}
                             alt="Percentile Icon"
-                            className="w-8 h-8 object-contain"
+                            className="w-7 h-7 object-contain"
                         />
                     </div>
-                    <div className="text-center">
-                        <p className="text-2xl font-semibold">{percentile}%</p>
-                        <p className="text-gray-500 text-sm uppercase">Percentile</p>
+                    <div>
+                        <p className="text-xl font-semibold text-gray-900 mb-0.5">{percentile}%</p>
+                        <p className="text-xs text-gray-500 uppercase tracking-wide">PERCENTILE</p>
                     </div>
                 </div>
 
-                {/* Score */}
-                <div className="flex items-center space-x-4">
-                    <div className="bg-green-100 rounded-full p-3 flex items-center justify-center">
+                {/* Correct Answers */}
+                <div className="flex items-center gap-3 px-4">
+                    <div className="bg-green-100 rounded-full p-2 flex items-center justify-center">
                         <Image
                             src={checkmark}
                             alt="Score Icon"
-                            className="w-8 h-8 object-contain"
+                            className="w-7 h-7 object-contain"
                         />
                     </div>
-                    <div className="text-center">
-                        <p className="text-2xl font-semibold">{score}</p>
-                        <p className="text-gray-500 text-sm uppercase">Correct Answers</p>
+                    <div>
+                        <p className="text-xl font-semibold text-gray-900 mb-0.5">{score}</p>
+                        <p className="text-xs text-gray-500 uppercase tracking-wide">CORRECT ANSWERS</p>
                     </div>
                 </div>
             </div>
