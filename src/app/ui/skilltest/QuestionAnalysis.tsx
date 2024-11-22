@@ -1,11 +1,22 @@
 'use client';
 
 import React, { useRef, useEffect, useState } from 'react';
-import { Chart, ArcElement, Tooltip, Legend } from 'chart.js';
+import {
+    Chart,
+    ArcElement,
+    Tooltip,
+    Legend,
+    DoughnutController,
+} from 'chart.js';
 import Image from 'next/image';
 import target from '../../../../public/target-icon.jpg';
 
-Chart.register(ArcElement, Tooltip, Legend);
+Chart.register(
+    ArcElement,
+    Tooltip,
+    Legend,
+    DoughnutController
+);
 
 interface QuestionAnalysisProps {
     totalQuestions: number;
