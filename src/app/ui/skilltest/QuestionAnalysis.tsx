@@ -71,7 +71,7 @@ const QuestionAnalysis: React.FC<QuestionAnalysisProps> = ({
     }, [correctAnswers, totalQuestions]);
 
     return (
-        <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md mx-auto">
+        <div className="bg-white rounded-lg p-6 w-full max-w-3xl mx-auto shadow hover:shadow-md transition-shadow duration-200">
             <div className="flex justify-between items-center mb-4">
                 <h2 className="text-lg font-bold">Question Analysis</h2>
                 <p className="text-blue-600 text-lg font-bold">

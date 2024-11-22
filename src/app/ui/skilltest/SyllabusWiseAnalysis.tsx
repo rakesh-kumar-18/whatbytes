@@ -30,7 +30,7 @@ const SyllabusWiseAnalysis = () => {
     };
 
     return (
-        <div className="bg-white p-8 w-full max-w-xl rounded-lg border border-gray-100 shadow hover:shadow-md transition-shadow duration-200">
+        <div className="bg-white p-8 w-full max-w-3xl rounded-lg border border-gray-100 shadow hover:shadow-md transition-shadow duration-200">
             <h2 className="text-xl font-bold mb-8">Syllabus Wise Analysis</h2>
             <div className="space-y-8">
                 {topics.map((topic) => (
