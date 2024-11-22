@@ -9,9 +9,18 @@ import {
     LineElement,
     Tooltip,
     Title,
+    LineController,
 } from 'chart.js';
 
-Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Title);
+Chart.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    LineController,
+    Tooltip,
+    Title
+);
 
 interface ComparisonGraphProps {
     userPercentile: number;
