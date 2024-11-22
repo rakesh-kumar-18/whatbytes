@@ -13,7 +13,7 @@ export default function Home() {
   const [percentile, setPercentile] = useState(30);
   const [currentScore, setCurrentScore] = useState(10);
   const totalQuestions = 15;
-  const averagePercentile = 72; // Fixed value
+  const averagePercentile = 72;
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleUpdate = (newRank: number, newPercentile: number, newScore: number) => {
@@ -40,16 +40,6 @@ export default function Home() {
             <SyllabusWiseAnalysis />
             <QuestionAnalysis totalQuestions={totalQuestions} correctAnswers={currentScore} />
           </div>
-        </div>
-
-        {/* Update Button */}
-        <div className="mt-8 flex justify-center">
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="bg-blue-500 text-white px-4 py-2 rounded-md"
-          >
-            Update Values
-          </button>
         </div>
 
         {/* Modal for Updates */}
